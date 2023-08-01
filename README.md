@@ -1,2 +1,16 @@
-# mass_transportation_optimization
-Using the Strongly Connected Components (SCC) algorithm, calculate how adding specific connections will impact the connectivity of the transportation network. 
+## Task
+
+In a magnificent city, where the glory of stars touches, the people have elected new councilors. After lengthy deliberations and debates over who will manage the city treasury and who will be in charge of the city's defense, the councilors successfully elected a new mayor from among their ranks, and the new city council took over the governance of the city. Their first attention turned to one of the most pressing issues in the city - transportation.
+
+Previous city councils introduced a progressive city-wide public transportation network, encompassing various modes of transport, from carriages and carts to boats and ferries, collectively known as the "Carriages and Carts" (abbreviated as PID). As part of this system, the citizens could also use a shared carts network called "Rekárka." However, despite all efforts, there is still an insufficient number of connections to enable smooth transportation between any two places in the city. The new city council aims to rectify this issue promptly and has called for a special session to address it.
+
+Considering the city treasury (and thus the councilors' pockets), it is necessary to strengthen the PID network efficiently. Each councilor has the right to propose a plan to enhance the transportation network by adding specific routes for carriages or other transportation connections. The city council will then decide which proposal will be implemented. To make an informed decision, it is crucial to determine precisely how the addition of specific connections will impact the current transportation network. Moreover, we would like to obtain this information quickly since the councilors have other responsibilities beyond spending the entire day in council meetings.
+
+Hence, you will be provided with a map of the current state of the PID network. For each proposed plan, you must efficiently calculate how adding the specified connections will affect the connectivity of the transportation network. To simplify the work (for the councilors, not you), the connectivity is fully described by the number of areas. Two stops are in the same area if they can be reached in both directions within the PID network.
+
+## Program Interface
+
+Your task is to implement the class TrafficNetworkTester. The class must have a constructor that takes an argument of type Map, representing the current situation, and a method count_areas(new_connections), which calculates how many areas will exist in the transportation network after adding the connections described in new_connections (format similar to Map::connections, see below, but it can also introduce new stops). An area is defined as the maximum set of stops such that one can travel between any two of them and back.
+
+The Map object contains an attribute places, which is a list of existing stops, and an attribute connections, which is a list of pairs of stops representing direct connections. Connections are unidirectional, and there can be multiple connections between two stops. Occasionally, the destination and starting stops may be the same. Each stop is represented by the data type Place. In the test data, Place is implemented using std::string, but in actual tests, a more efficient implementation is used.
+
